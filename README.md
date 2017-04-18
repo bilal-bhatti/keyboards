@@ -1,7 +1,7 @@
 # keyboards
-Keyboards
----
 
+Setup
+---
 Install avr toolchain using homebrew
 
 Build
