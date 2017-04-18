@@ -1,4 +1,4 @@
-KC6 keyboard based on GH60
+KC60 keyboard based on GH60
 ==========================
 
 ### 1. SpaceFN
