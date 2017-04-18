@@ -1,5 +1,5 @@
-GH60 keyboard firmware
-======================
+KC6 keyboard based on GH60
+==========================
 
 ### 1. SpaceFN
 This layout proposed by spiceBar uses space bar to change layer with using Dual role key technique. See [keymap_spacefn.c](keymap_spacefn.c) and [SpaceFN discussion](http://geekhack.org/index.php?topic=51069.0).
