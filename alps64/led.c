@@ -1,5 +1,5 @@
 /*
-Copyright 2014 Jun Wako <wakojun@gmail.com>
+Copyright 2012 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,17 +14,21 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include "keymap_common.h"
+
+#include <avr/io.h>
+#include "stdint.h"
+#include "led.h"
 
 
-/* translates key to keycode */
-uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
+void led_set(uint8_t usb_led)
 {
-    return keymaps[(layer)][(key.row)][(key.col)];
-}
-
-/* translates Fn keycode to action */
-action_t keymap_fn_to_action(uint8_t keycode)
-{
-    return (action_t)fn_actions[FN_INDEX(keycode)];
+    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+        // output high
+        DDRC |= (1<<5);
+        PORTC |= (1<<5);
+    } else {
+        // Hi-Z
+        DDRC &= ~(1<<5);
+        PORTC &= ~(1<<5);
+    }
 }
